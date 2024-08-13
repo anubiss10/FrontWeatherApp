@@ -143,5 +143,6 @@ export class WeatherComponent implements OnInit {
 
 Asegúrate de incluir el siguiente script en el archivo `index.html` para que la funcionalidad de autocompletado de Google Maps funcione correctamente:
 
+Para solicitar la API KEY de google maps (Gratuita), sólo hace falta solicitarla en la página de Google Cloud
 ```html
 <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
