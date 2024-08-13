@@ -120,6 +120,7 @@ export class WeatherComponent implements OnInit {
     );
   }
 }
+```
 ## Descripción de Variables
 
 - **location**: `string` - La ubicación que el usuario desea consultar.
