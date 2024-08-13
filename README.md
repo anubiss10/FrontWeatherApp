@@ -79,6 +79,47 @@ Sigue estos pasos para instalar y ejecutar la aplicación localmente:
   - Utiliza la API de Google Maps para sugerir ubicaciones a medida que el usuario escribe.
   - Permite seleccionar una ubicación de la lista sugerida y la envía a `WeatherDetailsComponent` para obtener datos meteorológicos.
 
+### 4. `WeatherComponent`
+
+- **Descripción**: Maneja la lógica principal para obtener y mostrar la información meteorológica.
+- **Funciones**:
+  - **Obtener datos del clima**: Utiliza la API de VisualCrossing para realizar solicitudes HTTP y obtener datos meteorológicos.
+  - **Procesar datos**: Procesa y organiza los datos recibidos para su visualización en `WeatherDetailsComponent`.
+  - **Manejo de errores**: Gestiona errores en la solicitud y muestra mensajes adecuados si ocurre algún problema.
+
+**Ejemplo de código**:
+
+```typescript
+import { Component, OnInit } from '@angular/core';
+import { WeatherService } from '../services/weather.service';
+
+@Component({
+  selector: 'app-weather',
+  templateUrl: './weather.component.html',
+  styleUrls: ['./weather.component.scss']
+})
+export class WeatherComponent implements OnInit {
+  location: string = '';
+  weatherData: any = null;
+  error: string | null = null;
+
+  constructor(private weatherService: WeatherService) {}
+
+  ngOnInit(): void {}
+
+  searchWeather(): void {
+    this.weatherService.getWeather(this.location).subscribe(
+      data => {
+        this.weatherData = data;
+        this.error = null;
+      },
+      err => {
+        this.weatherData = null;
+        this.error = 'No se pudo obtener la información del clima.';
+      }
+    );
+  }
+}
 ## Descripción de Variables
 
 - **location**: `string` - La ubicación que el usuario desea consultar.
