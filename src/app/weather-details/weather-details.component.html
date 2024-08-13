@@ -1,0 +1,54 @@
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Weather Forecast</h2>
+  
+    <div class="row mb-4">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="location">Location:</label>
+          <input id="location" class="form-control" [(ngModel)]="location" placeholder="Enter location" />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="date">Date:</label>
+          <input id="date" class="form-control" [(ngModel)]="date" type="date" />
+        </div>
+      </div>
+    </div>
+  
+    <button class="btn btn-success btn-lg" (click)="getWeather()">Get Weather</button>
+  
+    <div *ngIf="weatherData" class="mt-4">
+      <h3 class="text-center mb-4">Weather in {{ weatherData.resolvedAddress }} for {{ weatherData.days[0].datetime }}</h3>
+      <div class="card shadow-lg">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-2 text-center">
+              <img [src]="getIcon(weatherData.days[0].icon)" alt="Weather Icon" class="img-fluid weather-icon" />
+            </div>
+            <div class="col-md-10">
+              <div class="row">
+                <div class="col-md-6">
+                  <p><strong>Temperatura:</strong> {{ weatherData.days[0].temp }} °C</p>
+                  <p><strong>Temperatura Aparente:</strong> {{ weatherData.days[0].feelslike }} °C</p>
+                  <p><strong>Temperatura Máxima:</strong> {{ weatherData.days[0].tempmax }} °C</p>
+                  <p><strong>Temperatura Mínima:</strong> {{ weatherData.days[0].tempmin }} °C</p>
+                </div>
+                <div class="col-md-6">
+                  <p><strong>Humedad:</strong> {{ weatherData.days[0].humidity }}%</p>
+                  <p><strong>Velocidad del Viento:</strong> {{ weatherData.days[0].windspeed }} km/h</p>
+                  <p><strong>Precipitación:</strong> {{ weatherData.days[0].precip }} mm</p>
+                  <p><strong>Condiciones:</strong> {{ weatherData.days[0].conditions }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div *ngIf="weatherDataLoaded && !weatherData" class="alert alert-danger mt-4" role="alert">
+      No weather data available.
+    </div>
+  </div>
+  
