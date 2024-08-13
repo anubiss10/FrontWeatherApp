@@ -1,0 +1,17 @@
+.weather-details {
+    border: 1px solid #ccc;
+    padding: 16px;
+    border-radius: 8px;
+    margin-top: 16px;
+    background-color: #f9f9f9;
+  }
+  
+  .weather-info p {
+    font-size: 16px;
+    margin: 4px 0;
+  }
+  
+  .weather-info img {
+    max-width: 100px;
+  }
+  

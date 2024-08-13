@@ -1,0 +1,10 @@
+/* location-autocomplete.component.css */
+.container {
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  mat-form-field {
+    width: 100%;
+  }
+  

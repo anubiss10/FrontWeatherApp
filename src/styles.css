@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* Asegúrate de que el botón de traducción se alinee a la derecha */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .ml-auto {
+    margin-left: auto;
+  }
+  
+  #language-select {
+    width: auto; /* Ajusta el tamaño del selector de idioma */
+  }
+ 
+  body {
+    background-image: url('assets/custom-icons/background.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  
