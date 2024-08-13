@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class WeatherService {
-  private baseUrl = 'https://travelcraft-4jl8.onrender.com//weather'; // URL de tu backend de Spring Boot
+  private baseUrl = '{{YOUR-BACKEND-URL}}/{YOUR-ENDPOINT}}'; // URL de tu backend de Spring Boot
 
   constructor(private http: HttpClient) { }
 

@@ -28,7 +28,6 @@ export class LocationAutocompleteComponent implements OnInit {
         const place = autocomplete.getPlace();
         if (place.geometry) {
           console.log('Selected Place:', place.formatted_address);
-          // Aquí puedes hacer algo con la dirección seleccionada
         }
       });
     }

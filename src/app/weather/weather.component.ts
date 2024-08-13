@@ -98,7 +98,7 @@ export class WeatherComponent implements AfterViewInit {
     const requests = [];
     for (let date = start; date <= end; date.setDate(date.getDate() + 1)) {
       const formattedDate = this.datePipe.transform(date, 'yyyy-MM-dd');
-      const url = `https://travel-latest-mexp.onrender.com/weather?location=${this.location}&date=${formattedDate}`;
+      const url = `{{YOUR-BACKEND-URL}}/{YOUR-ENDPOINT}}?location=${this.location}&date=${formattedDate}`;
       requests.push(this.http.get(url).toPromise());
     }
 
