@@ -1,27 +1,105 @@
-# TravelPlanner
+# FrontWeatherApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
+**FrontWeatherApp** es una aplicación web para consultar información meteorológica en tiempo real. La aplicación utiliza [Angular](https://angular.io/) y [Angular Material](https://material.angular.io/) para proporcionar una interfaz de usuario moderna y responsiva.
 
-## Development server
+## Descripción
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+FrontWeatherApp permite a los usuarios buscar y visualizar datos meteorológicos mediante la API de VisualCrossing y la API de Google Maps para autocompletar ubicaciones. La aplicación muestra el clima actual y las previsiones para los próximos días en una interfaz fácil de usar.
 
-## Code scaffolding
+## Requisitos
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Antes de comenzar, asegúrate de tener instalados los siguientes requisitos:
 
-## Build
+- [Node.js](https://nodejs.org/) (versión 14 o superior)
+- [npm](https://www.npmjs.com/) (gestor de paquetes para Node.js)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Tecnologías
 
-## Running unit tests
+- **Angular**: Framework para construir aplicaciones web de una sola página.
+- **Angular Material**: Conjunto de componentes de interfaz de usuario basados en Material Design.
+- **TypeScript**: Superset de JavaScript para un desarrollo más estructurado.
+- **Sass**: Preprocesador CSS para un estilo más mantenible y modular.
+- **VisualCrossing API**: Proporciona datos meteorológicos.
+- **Google Maps API**: Utilizada para autocompletar ubicaciones.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Instalación
 
-## Running end-to-end tests
+Sigue estos pasos para instalar y ejecutar la aplicación localmente:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. Clona el repositorio:
 
-## Further help
+    ```bash
+    git clone https://github.com/anubiss10/FrontWeatherApp.git
+    ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+2. Navega al directorio del proyecto:
+
+    ```bash
+    cd FrontWeatherApp
+    ```
+
+3. Instala las dependencias:
+
+    ```bash
+    npm install
+    ```
+
+4. Inicia la aplicación en modo de desarrollo:
+
+    ```bash
+    ng serve
+    ```
+
+5. Abre tu navegador y accede a `http://localhost:4200` para ver la aplicación en funcionamiento.
+
+## Uso
+
+- **Buscar una ubicación**: Escribe el nombre de una ciudad o localidad en el campo de búsqueda y presiona "Buscar".
+- **Ver detalles**: La aplicación mostrará el clima actual y las previsiones para los próximos días.
+- **Configuración**: Cambia las unidades de medida y otros parámetros en la sección de configuración.
+
+## Componentes
+
+### 1. `AppComponent`
+
+- **Descripción**: Componente principal de la aplicación. Actúa como el contenedor para otros componentes y maneja la navegación.
+- **Funciones**: Inicializa la aplicación y define la estructura básica de la interfaz.
+
+### 2. `WeatherDetailsComponent`
+
+- **Descripción**: Muestra la información meteorológica para la ubicación actual.
+- **Funciones**:
+  - Muestra el clima actual, la temperatura y la previsión del tiempo.
+  - Actualiza la vista cuando se selecciona una nueva ubicación.
+
+### 3. `LocationAutocompleteComponent`
+
+- **Descripción**: Proporciona un campo de entrada con autocompletado para la selección de ubicaciones.
+- **Funciones**:
+  - Utiliza la API de Google Maps para sugerir ubicaciones a medida que el usuario escribe.
+  - Permite seleccionar una ubicación de la lista sugerida y la envía a `WeatherDetailsComponent` para obtener datos meteorológicos.
+
+## Descripción de Variables
+
+- **location**: `string` - La ubicación que el usuario desea consultar.
+- **weatherData**: `WeatherData` - Un objeto que contiene la información meteorológica para la ubicación dada.
+- **units**: `string` - Las unidades de medida para la temperatura (e.g., "metric" para Celsius, "imperial" para Fahrenheit).
+
+## Integración con APIs
+
+### VisualCrossing API
+
+- **Descripción**: API utilizada para obtener datos meteorológicos.
+- **Uso**: Se realizan solicitudes HTTP para obtener el clima actual y las previsiones basadas en la ubicación proporcionada por el usuario.
+
+### Google Maps API
+
+- **Descripción**: API utilizada para autocompletar ubicaciones en el campo de búsqueda.
+- **Uso**: Se integra en `LocationAutocompleteComponent` para ofrecer sugerencias de ubicación a medida que el usuario escribe en el campo de entrada.
+
+## Script de Google Maps
+
+Asegúrate de incluir el siguiente script en el archivo `index.html` para que la funcionalidad de autocompletado de Google Maps funcione correctamente:
+
+```html
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
