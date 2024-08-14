@@ -4,7 +4,6 @@ body, h3, .weather-card {
   padding: 0;
 }
 
-/* Cambia el color de fondo del contenedor y los botones */
 .container {
   background-color: #f5f5f5;
   padding: 30px;
@@ -12,7 +11,7 @@ body, h3, .weather-card {
 }
 
 .btn-success {
-  background-color: #28a745; /* Verde Skyscanner */
+  background-color: #28a745;
   border-color: #28a745;
 }
 
@@ -26,19 +25,19 @@ body, h3, .weather-card {
   border-radius: 8px;
   margin: 10px;
   width: 348px;
-  height: 367px; /* Ajustar la altura de la tarjeta */
+  height: 367px;
   display: flex;
-  flex-direction: column; /* Asegurar que el contenido se apile verticalmente */
-  justify-content: space-between; /* Espacio entre los elementos dentro de la tarjeta */
-  align-items: center; /* Centrar el contenido horizontalmente */
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .card-body {
   background-color: #ffffff;
-  padding: 10px; /* Reducir el padding */
+  padding: 10px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center; /* Centrar el texto */
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -48,209 +47,68 @@ body, h3, .weather-card {
 
 /* Imagen de icono de clima */
 img {
-  width: 60px; /* Ajustar el tamaño del icono */
+  width: 60px;
   height: auto;
-  margin-bottom: 10px; /* Añadir margen inferior al icono */
+  margin-bottom: 10px;
 }
 
 /* Contenedor del Componente */
 .weather-container {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 20px;
+  box-sizing: border-box;
 }
 
 /* Estilos para las cartas */
 .weather-card {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around; /* Ajustar la alineación de las tarjetas en la línea horizontal */
-  margin:12; /* Eliminar márgenes adicionales */
-  padding: 0; /* Asegúrate de que no haya padding adicional */
-}
-
-.weather-card .card {
-  flex: 1 1 calc(33% - 20px); /* Ajustar la base flex para 3 tarjetas por fila con margen */
-  box-sizing: border-box; /* Incluir padding y border en el tamaño total */
-  margin: 5px; /* Ajustar margen general de las tarjetas */
-  margin-bottom: 50px; /* Ajustar margen inferior de las tarjetas */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra de la tarjeta */
-}
-
-/* Ajustes de tamaño de texto */
-.card-text {
-  font-size: 14px; /* Reducir el tamaño del texto */
-  margin: 0; /* Eliminar márgenes del texto */
-}
-
-.card-title {
-  font-size: 16px; /* Reducir el tamaño del título */
-  margin-bottom: 10px; /* Reducir el margen inferior del título */
-}
-
-.text-muted {
-  color: #6c757d !important;
-  margin-top: 10px;
-  font-size: large; /* Reducir el tamaño del texto */
-}
-
-/* Ajustes adicionales para pantallas pequeñas */
-@media (max-width: 768px) {
-  .weather-icon {
-    width: 100px; /* Reducir tamaño del icono en pantallas pequeñas */
-    height: 100px;
-  }
-
-  .weather-card .card {
-    flex-basis: calc(50% - 20px); /* Ajustar base flex para 2 tarjetas por fila en pantallas pequeñas */
-    margin: 2px; /* Reducir margen en pantallas pequeñas */
-  }
-}
-
-@media (max-width: 576px) {
-  .weather-card .card {
-    flex-basis: calc(100% - 20px); /* Ajustar base flex para 1 tarjeta por fila en pantallas muy pequeñas */
-  }
-}
-
-/* Estilos para el contenedor del toast */
-.toast-container {
-  position: fixed;
-  top: 50px;
-  right: 20px;
-  z-index: 1050; /* Asegúrate de que el toast esté sobre otros elementos */
-}
-
-/* Estilos para el toast */
-.toast {
-  background-color: #333;
-  color: #fff;
-  padding: 15px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-  font-size: 14px; /* Reducir el tamaño del texto del toast */
-  position: relative;
-  display: inline-block;
-}
-
-/* Estilos para el título principal */
-h2.text-center.mb-4 {
-  font-size: 40px; /* Tamaño del texto del título principal */
-  margin-bottom: 20px; /* Margen inferior del título principal */
-}
-
-/* Estilos para el título de datos del clima */
-/* Estilos globales */
-body, h3, .weather-card {
-  margin: 0;
+  justify-content: center;
+  margin: 12px;
   padding: 0;
 }
 
-/* Cambia el color de fondo del contenedor y los botones */
-.container {
-  background-color: #f5f5f5;
-  padding: 30px;
-  border-radius: 8px;
-}
-
-.btn-success {
-  background-color: #28a745; /* Verde Skyscanner */
-  border-color: #28a745;
-}
-
-.btn-success:hover {
-  background-color: #218838;
-  border-color: #1e7e34;
-}
-
-/* Estilos para la tarjeta */
-.card {
-  border-radius: 8px;
-  margin: 10px;
-  width: 348px;
-  height: 367px; /* Ajustar la altura de la tarjeta */
-  display: flex;
-  flex-direction: column; /* Asegurar que el contenido se apile verticalmente */
-  justify-content: space-between; /* Espacio entre los elementos dentro de la tarjeta */
-  align-items: center; /* Centrar el contenido horizontalmente */
-}
-
-.card-body {
-  background-color: #ffffff;
-  padding: 10px; /* Reducir el padding */
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center; /* Centrar el texto */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-}
-
-/* Imagen de icono de clima */
-img {
-  width: 60px; /* Ajustar el tamaño del icono */
-  height: auto;
-  margin-bottom: 10px; /* Añadir margen inferior al icono */
-}
-
-/* Contenedor del Componente */
-.weather-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-/* Estilos para las cartas */
-.weather-card {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around; /* Ajustar la alineación de las tarjetas en la línea horizontal */
-  margin:12; /* Eliminar márgenes adicionales */
-  padding: 0; /* Asegúrate de que no haya padding adicional */
-}
-
 .weather-card .card {
-  flex: 1 1 calc(33% - 20px); /* Ajustar la base flex para 3 tarjetas por fila con margen */
-  box-sizing: border-box; /* Incluir padding y border en el tamaño total */
-  margin: 5px; /* Ajustar margen general de las tarjetas */
-  margin-bottom: 50px; /* Ajustar margen inferior de las tarjetas */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra de la tarjeta */
+  flex: 1 1 calc(33% - 20px);
+  box-sizing: border-box;
+  margin: 5px;
+  margin-bottom: 50px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 /* Ajustes de tamaño de texto */
 .card-text {
-  font-size: 14px; /* Reducir el tamaño del texto */
-  margin: 0; /* Eliminar márgenes del texto */
+  font-size: 14px;
+  margin: 0;
 }
 
 .card-title {
-  font-size: 16px; /* Reducir el tamaño del título */
-  margin-bottom: 10px; /* Reducir el margen inferior del título */
+  font-size: 16px;
+  margin-bottom: 10px;
 }
 
 .text-muted {
   color: #6c757d !important;
   margin-top: 10px;
-  font-size: large; /* Reducir el tamaño del texto */
+  font-size: large;
 }
 
 /* Ajustes adicionales para pantallas pequeñas */
 @media (max-width: 768px) {
   .weather-icon {
-    width: 100px; /* Reducir tamaño del icono en pantallas pequeñas */
+    width: 100px;
     height: 100px;
   }
 
   .weather-card .card {
-    flex-basis: calc(50% - 20px); /* Ajustar base flex para 2 tarjetas por fila en pantallas pequeñas */
+    flex-basis: calc(50% - 20px);
   }
 }
 
 @media (max-width: 576px) {
   .weather-card .card {
-    flex-basis: calc(100% - 20px); /* Ajustar base flex para 1 tarjeta por fila en pantallas muy pequeñas */
+    flex-basis: calc(100% - 20px);
   }
 }
 
@@ -259,7 +117,7 @@ img {
   position: fixed;
   top: 50px;
   right: 20px;
-  z-index: 1050; /* Asegúrate de que el toast esté sobre otros elementos */
+  z-index: 1050;
 }
 
 /* Estilos para el toast */
@@ -269,43 +127,28 @@ img {
   padding: 15px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-  font-size: 14px; /* Reducir el tamaño del texto del toast */
+  font-size: 14px;
   position: relative;
   display: inline-block;
 }
 
 /* Estilos para el título principal */
 h2.text-center.mb-4 {
-  font-size: 40px; /* Tamaño del texto del título principal */
-  margin-bottom: 20px; /* Margen inferior del título principal */
+  font-size: 40px;
+  margin-bottom: 20px;
 }
 
 /* Estilos para el título de datos del clima */
-/* Estilos generales para el contenedor */
-.weather-container {
-  max-width: 100%; /* Asegura que el contenedor ocupe el ancho completo de la pantalla */
-  padding: 20px;
-  box-sizing: border-box; /* Incluye el padding en el cálculo del ancho total */
-}
-
-/* Asegura que el <h3> ocupe el ancho completo del contenedor */
 .weather-card h3 {
-  width: 100%; /* Asegura que el <h3> ocupe el 100% del ancho del contenedor padre */
-  margin: 0; /* Elimina el margen para evitar restricciones de ancho */
-  padding: 0; /* Elimina padding si es necesario */
-  text-align: center; /* Centra el texto dentro del <h3> */
-  font-size: 25px; /* Tamaño del texto del título */
-  line-height: 1.2; /* Ajusta la altura de línea */
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 25px;
+  line-height: 1.2;
 }
 
-.weather-card {
-  width: 100%; /* Asegura que el contenedor ocupe el ancho completo */
-  display: flex;
-  flex-wrap: wrap; /* Permite que las tarjetas se envuelvan en una nueva línea */
-  justify-content: center; /* Centra las tarjetas en el contenedor */
-  padding: 0; /* Elimina padding adicional */
-  box-sizing: border-box; /* Incluye el padding en el cálculo del ancho total */
-}
+/* Estilos para el campo de formulario */
 .form-control {
   display: block;
   width: 100%;
@@ -324,6 +167,7 @@ h2.text-center.mb-4 {
   transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
   height: 128%;
 }
+
 label {
   display: inline-block;
   font-size: medium;

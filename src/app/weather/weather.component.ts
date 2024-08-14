@@ -122,7 +122,7 @@ export class WeatherComponent implements AfterViewInit {
   }
 
   translateCondition(condition: string): string {
-    // Usa translate.instant para obtener la traducción inmediata
+    //  translate.instant para obtener la traducción inmediata
     let translatedCondition = this.translate.instant(`weather.${condition}`);
     return translatedCondition !== `weather.${condition}` ? translatedCondition : condition;
   }
@@ -154,7 +154,7 @@ export class WeatherComponent implements AfterViewInit {
     }
   }
   showToastMessage(message: string) {
-    console.log('Toast message:', message); // Añade esta línea
+    console.log('Toast message:', message); 
     this.toastMessage = message;
     this.showToast = true;
     setTimeout(() => {

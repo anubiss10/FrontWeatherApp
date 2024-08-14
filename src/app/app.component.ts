@@ -8,7 +8,6 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent { 
   title = 'rou'; 
-  //Local Variable defined 
   formattedaddress=" "; 
   options={ 
     componentRestrictions:{ 
@@ -16,11 +15,9 @@ export class AppComponent {
     } 
   } 
   public AddressChange(address: any) { 
-  //setting address from API to local variable 
    this.formattedaddress=address.formatted_address 
 } 
 constructor(private translate: TranslateService) {
-  // Configura el idioma por defecto
   translate.setDefaultLang('es');
 }
 
